@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 1 - WebGL Paint Program</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .container {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .panel {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    canvas {
+      border: 1px solid #333;
+      background: white;
+    }
+
+    .controls {
+      width: 340px;
+    }
+
+    .control-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+    }
+
+    button {
+      margin: 4px 4px 4px 0;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1f6feb;
+      color: white;
+    }
+
+    button:hover {
+      background: #1558b0;
+    }
+
+    .mode-active {
+      background: #0b8f4d;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .reference-img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 8px;
+    }
+
+    #statusText {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body onload="main()">
+  <h1>WebGL Paint Program</h1>
+  <p class="small">
+    Rubric features included: point, triangle, circle, RGB sliders, size slider,
+    circle segment slider, click and drag drawing, clear button, picture button,
+    and an awesomeness feature: undo.
+  </p>
+
+  <div class="container">
+    <div class="panel">
+      <canvas id="webgl" width="600" height="600">
+        Please use a browser that supports canvas.
+      </canvas>
+      <div id="statusText">Mode: Point</div>
+    </div>
+
+    <div class="panel controls">
+      <div class="control-group">
+        <strong>Shape Mode</strong><br />
+        <button id="pointButton">Point</button>
+        <button id="triangleButton">Triangle</button>
+        <button id="circleButton">Circle</button>
+        <button id="eraserButton">Eraser</button>
+      </div>
+
+      <div class="control-group">
+        <strong>Actions</strong><br />
+        <button id="clearButton">Clear Canvas</button>
+        <button id="undoButton">Undo</button>
+        <button id="pictureButton">Draw Picture</button>
+      </div>
+
+      <div class="control-group">
+        <label for="redSlide">Red</label>
+        <input type="range" id="redSlide" min="0" max="100" value="100" />
+      </div>
+
+      <div class="control-group">
+        <label for="greenSlide">Green</label>
+        <input type="range" id="greenSlide" min="0" max="100" value="0" />
+      </div>
+
+      <div class="control-group">
+        <label for="blueSlide">Blue</label>
+        <input type="range" id="blueSlide" min="0" max="100" value="0" />
+      </div>
+
+      <div class="control-group">
+        <label for="sizeSlide">Shape Size</label>
+        <input type="range" id="sizeSlide" min="5" max="40" value="12" />
+      </div>
+
+      <div class="control-group">
+        <label for="segmentSlide">Circle Segments</label>
+        <input type="range" id="segmentSlide" min="3" max="40" value="12" />
+      </div>
+
+      <div class="control-group">
+        <strong>Reference Drawing</strong>
+        <p class="small">
+          Replace this with your own hand-drawn reference image for the rubric.
+        </p>
+        <img class="reference-img" src="img/drawing.jpg" alt="Reference drawing" />
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix.js"></script>
+
+  <script src="Point.js"></script>
+  <script src="Triangle.js"></script>
+  <script src="Circle.js"></script>
+  <script src="ColoredPoints.js"></script>
+</body>
+</html>
