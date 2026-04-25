@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 2 - Blocky Panda</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 16px;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+    }
+
+    canvas {
+      border: 1px solid black;
+      background: white;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .row {
+      margin: 7px 0;
+    }
+
+    label {
+      display: inline-block;
+      width: 190px;
+    }
+
+    button {
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body onload="main()">
+  <h1>Blocky Panda</h1>
+
+  <canvas id="webgl" width="700" height="700">
+    Your browser does not support canvas.
+  </canvas>
+
+  <div class="row">
+    <label for="angleXSlide">Global Rotate X</label>
+    <input type="range" id="angleXSlide" min="-180" max="180" value="0">
+  </div>
+
+  <div class="row">
+    <label for="angleYSlide">Global Rotate Y</label>
+    <input type="range" id="angleYSlide" min="-180" max="180" value="0">
+  </div>
+
+  <h3>Front Right Leg</h3>
+  <div class="row">
+    <label for="frontLeftUpperSlide">Upper</label>
+    <input type="range" id="frontLeftUpperSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="frontLeftLowerSlide">Lower</label>
+    <input type="range" id="frontLeftLowerSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="frontLeftPawSlide">Paw</label>
+    <input type="range" id="frontLeftPawSlide" min="-45" max="45" value="0">
+  </div>
+
+  <h3>Front Left Leg</h3>
+  <div class="row">
+    <label for="frontRightUpperSlide">Upper</label>
+    <input type="range" id="frontRightUpperSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="frontRightLowerSlide">Lower</label>
+    <input type="range" id="frontRightLowerSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="frontRightPawSlide">Paw</label>
+    <input type="range" id="frontRightPawSlide" min="-45" max="45" value="0">
+  </div>
+
+  <h3>Back Left Leg</h3>
+  <div class="row">
+    <label for="backLeftUpperSlide">Upper</label>
+    <input type="range" id="backLeftUpperSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="backLeftLowerSlide">Lower</label>
+    <input type="range" id="backLeftLowerSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="backLeftPawSlide">Paw</label>
+    <input type="range" id="backLeftPawSlide" min="-45" max="45" value="0">
+  </div>
+
+  <h3>Back Right Leg</h3>
+  <div class="row">
+    <label for="backRightUpperSlide">Upper</label>
+    <input type="range" id="backRightUpperSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="backRightLowerSlide">Lower</label>
+    <input type="range" id="backRightLowerSlide" min="-90" max="90" value="0">
+  </div>
+  <div class="row">
+    <label for="backRightPawSlide">Paw</label>
+    <input type="range" id="backRightPawSlide" min="-45" max="45" value="0">
+  </div>
+
+  <div class="row">
+    <button id="animationOnButton">Animation ON</button>
+    <button id="animationOffButton">Animation OFF</button>
+  </div>
+
+  <p id="fps">FPS: --</p>
+  <p>Drag mouse on canvas to rotate. Shift + click for poke animation.</p>
+
+  <script src="./lib/cuon-utils.js"></script>
+  <script src="./lib/cuon-matrix-cse160.js"></script>
+  <script src="./Cube.js"></script>
+  <script src="./Cylinder.js"></script>
+  <script src="./BlockyAnimal.js"></script>
+</body>
+</html>
