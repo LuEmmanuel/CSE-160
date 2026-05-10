@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 3 - Voxel World</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    #hud {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hud">
+    <b>Lost Panda Village</b><br>
+    W/A/S/D = Move<br>
+    Q/E = Turn<br>
+    Mouse = Look<br>
+    F = Add block<br>
+    R = Remove block<br>
+    Find the 3 baby pandas!
+    <p id="score">Baby pandas found: 0 / 3</p>
+  </div>
+
+  <canvas id="webgl" width="1000" height="700">
+    <!-- Please use a browser that supports canvas. -->
+  </canvas>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+
+<script src="Camera.js"></script>
+<script src="Cube.js"></script>
+<script src="Animal.js"></script>
+<script src="World.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
