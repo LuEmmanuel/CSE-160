@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Assignment 4 World</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    #hud {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 270px;
+    }
+
+    #hud button {
+      margin-top: 6px;
+      margin-right: 4px;
+    }
+
+    #hud input {
+      width: 150px;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hud">
+    <b>ASG4: Panda World</b><br>
+    W/A/S/D = Move<br>
+    Q/E = Turn<br>
+    Mouse = Look<br>
+    F = Add block<br>
+    R = Remove block<br>
+    P = Restart game<br>
+    L = Toggle lighting<br>
+    N = Toggle normals<br>
+    O = Toggle flashlight<br><br>
+
+    <button id="lightingButton">Toggle Lighting</button>
+    <button id="normalButton">Toggle Normals</button>
+    <button id="spotlightButton">Toggle Flashlight</button>
+
+    <br><br>
+
+    Light X:
+    <input id="lightSlider" type="range" min="0" max="32" value="16">
+
+    <br>
+
+    Red:
+    <input id="redSlider" type="range" min="0" max="100" value="100">
+
+    <br>
+
+    Green:
+    <input id="greenSlider" type="range" min="0" max="100" value="100">
+
+    <br>
+
+    Blue:
+    <input id="blueSlider" type="range" min="0" max="100" value="100">
+
+    <p id="score">Baby pandas found: 0 / 3</p>
+  </div>
+
+  <canvas id="webgl" width="1000" height="700">
+    Please use a browser that supports canvas.
+  </canvas>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+
+  <script src="Camera.js"></script>
+  <script src="Cube.js"></script>
+  <script src="Sphere.js"></script>
+  <script src="Animal.js"></script>
+  <script src="Model.js"></script>
+  <script src="World.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
