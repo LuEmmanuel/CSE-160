@@ -10,12 +10,12 @@ scene.fog = new THREE.Fog(0x02040f, 10, 38);
 // TEXTURES
 const textureLoader = new THREE.TextureLoader();
 
-const grassTexture = textureLoader.load('/textures/grass.jpg');
+const grassTexture = textureLoader.load('${assetPath}textures/grass.jpg');
 grassTexture.wrapS = THREE.RepeatWrapping;
 grassTexture.wrapT = THREE.RepeatWrapping;
 grassTexture.repeat.set(40, 40);
 
-const woodTexture = textureLoader.load('/textures/wood.png');
+const woodTexture = textureLoader.load('${assetPath}textures/wood.png');
 woodTexture.wrapS = THREE.RepeatWrapping;
 woodTexture.wrapT = THREE.RepeatWrapping;
 woodTexture.repeat.set(2, 1);
@@ -346,7 +346,7 @@ const loader = new GLTFLoader();
 // ROOFTOP TENT GLB MODEL
 // This imported GLB is intentionally placed above the SUV to create a rooftop camping setup.
 loader.load(
-  '/models/model.glb',
+  '${assetPath}models/model.glb',
 
   function (gltf) {
     const rooftopTent = gltf.scene;
@@ -374,7 +374,7 @@ loader.load(
 
 // SUV MODEL
 loader.load(
-  '/models/SUV.glb',
+  '${assetPath}models/SUV.glb',
 
   function (gltf) {
     const suv = gltf.scene;
@@ -402,7 +402,7 @@ loader.load(
 
 // ANIMATED WOMAN MODEL
 loader.load(
-  '/models/Animated Woman.glb',
+  '${assetPath}models/Animated Woman.glb',
 
   function (gltf) {
     const woman = gltf.scene;
@@ -430,7 +430,7 @@ loader.load(
 
 // MAN MODEL
 loader.load(
-  '/models/Man.glb',
+  '${assetPath}models/Man.glb',
 
   function (gltf) {
     const man = gltf.scene;
