@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://LuEmmanuel.github.io/asgn5",
+  "homepage": "https://LuEmmanuel.github.io/CSE-160/asgn5",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
